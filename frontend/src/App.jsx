@@ -7,8 +7,11 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  // Use the VITE_BACKEND_URL environment variable for the fetch URL
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+
   useEffect(() => {
-    fetch('/api')
+    fetch(`${backendUrl}/api`)
       .then((response) => response.json())
       .then((result) => {
         alert(`Hello ${result.hello}!`)
