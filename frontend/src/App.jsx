@@ -11,7 +11,7 @@ function App() {
     fetch('/api')
       .then((response) => response.json())
       .then((result) => {
-        alert(`Hello ${result}!`)
+        alert(`Hello ${result.name}!`)
       })
   }, [])
 
