@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
-    fetch('/api')
+    fetch('https://fullstack-and-postgresql-db-via-web.onrender.com/api/')
       .then((response) => response.json())
       .then((result) => {
         alert(`Hello ${result.hello}!`)
