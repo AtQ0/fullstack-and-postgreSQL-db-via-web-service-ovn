@@ -11,13 +11,9 @@ function App() {
     fetch('https://fullstack-and-postgresql-db-via-web.onrender.com/api/')
       .then((response) => response.json())
       .then((result) => {
-        alert(`Hello ${result.hello}!`);
+        alert(`Hello ${result.hello}!`)
       })
-      .catch((error) => {
-        console.error("Fetch error: ", error);
-      });
-  }, []);
-
+  }, [])
 
   return (
     <>
