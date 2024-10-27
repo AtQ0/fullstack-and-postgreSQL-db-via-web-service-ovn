@@ -16,7 +16,7 @@ function App() {
       .then((result) => {
         alert(`Hello ${result.hello}!`)
       })
-  }, [])
+  }, [backendUrl])
 
   return (
     <>
