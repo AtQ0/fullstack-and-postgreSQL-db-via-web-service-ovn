@@ -1,5 +1,6 @@
 const dotenv = require('dotenv'),
     express = require('express'),
+    path = require('path'),
     { Client } = require('pg');
 
 const app = express()
@@ -15,8 +16,11 @@ const client = new Client({
 
 client.connect();
 
+// Serve frontend files from the 'dist' folder
+app.use(express.static(path.join(path.resolve(), 'dist')));
 
-app.get('/', async (request, response) => {
+//Backend
+app.get('/api', async (request, response) => {
     const { rows } = await client.query(
         //'SELECT * FROM cities WHERE name = $1',
         //['Stockholm']
